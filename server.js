@@ -32,7 +32,8 @@ server.use('/api/v1/favorites',jwtAuth,favoriteRoute);
 //error middlware
 server.use(errorHandlerMiddleware);
 
-server.listen(3000,()=>{
+const Port = process.env.PORT || 3000
+server.listen(Port,()=>{
     console.log('server listening at port 3000');
     connectUsingMongoose();
 })
